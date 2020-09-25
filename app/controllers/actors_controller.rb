@@ -16,11 +16,14 @@ class ActorsController < ApplicationController
 		end
 	end
 
+	def show
+		@movies = Actor.find(params[:id]).movies
+	end
+
 	private 
 	def actor_params
 		params.require(:actor).permit(:first_name, :last_name)
 	end
 
-	def show
-	end
+	
 end
